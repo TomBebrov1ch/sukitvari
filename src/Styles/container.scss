@@ -1,0 +1,58 @@
+.container{
+    margin: auto;
+    width: clamp(200px,20.832vw,800px);
+    height: clamp(175px,18.228vw,700px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F1ECCE;
+    border-radius: 10px;
+    &__input{
+        padding: clamp(7.5px,0.7812vw,30px);
+        display: flex;
+        justify-content: center;
+        border: 0px solid #73937E;
+        font-size: clamp(7.5px,0.7812vw,30px);
+    }
+    &__button{
+        display: flex;
+        justify-content: center;
+        border: 0px solid #73937E;
+        background-color: #73937E;
+        padding: clamp(5px,0.5208vw,20px);
+        padding-left: clamp(10px,1.0416vw,40px);
+        padding-right: clamp(10px,1.0416vw,40px);
+        color: #F1ECCE;
+        transition: 0.5s all;
+        margin-top: clamp(6.5px,0.67704vw,26px);
+        font-size: clamp(6px,0.62496vw,24px);
+    }
+    &__button:hover{
+        transition: 0.5s;
+        background-color: #b3cebd;
+        color: black;
+    }
+    &__min__text{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: rgb(47, 46, 46);
+        font-size: clamp(12.5px,1.302vw,50px);
+        list-style: none;
+        font-weight: 500;
+        margin-top: clamp(7.5px,0.7812vw,30px);
+    }
+}
+
+.text{
+
+
+    &__big__text{
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+            font-size: clamp(20px,2.0832vw,80px);
+        }
+    
+}

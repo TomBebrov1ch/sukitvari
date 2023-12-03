@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useRef } from "react"
+import './Styles/global.scss'
+import './Styles/container.scss'
 
-function App() {
+const App = () => {
+  const [suka, setSuka] = useState('')
+  const inputRef = useRef(null)
+  const [list, setList] = useState([])
+
+  const addTodo = () => {
+    if (suka.trim() !== '') {
+      setList([...list, suka]);
+      setSuka('');
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <div className="text">
+      <h1 className="text__big__text">Hello, this is your toDo</h1>
+      </div>
+      <div className="container">
+      <input className="container__input" ref={inputRef} value={suka} onChange={(e) => setSuka(e.target.value)} type='text'/>
+      <button className="container__button" onClick={addTodo}>Add</button>
+     <ul className="container__min__text">
+        {list.map((todo, index) => (
+          <li key={index}>{todo}</li>
+        ))}
+     </ul>
+      </div>
+ </>
+  )
 }
 
-export default App;
+export default App
